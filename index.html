@@ -9,26 +9,30 @@
 <body>
     <div id="game-container">
         <h1>Tic-Tac-Toe</h1>
-        <h2 id="narator">Let's begin this game! <br>
-            Player 1 please choose a cell</h2>
+        <h2 id="narrator">Let's begin this game! <br>
+            Player 1, please choose a cell</h2>
         <div id="game-board">
             <div id="cells">
-                <button id="r0-c0" class="button"></button>
-                <button id="r0-c1" class="button"></button>
-                <button id="r0-c2" class="button"></button>
+                <button id="r0_c0" class="button"></button>
+                <button id="r0_c1" class="button"></button>
+                <button id="r0_c2" class="button"></button>
 
-                <button id="r1-c0" class="button"></button>
-                <button id="r1-c1" class="button"></button>
-                <button id="r1-c2" class="button"></button>
+                <button id="r1_c0" class="button"></button>
+                <button id="r1_c1" class="button"></button>
+                <button id="r1_c2" class="button"></button>
 
-                <button id="r2-c0" class="button"></button>
-                <button id="r2-c1" class="button"></button>
-                <button id="r2-c2" class="button"></button>
+                <button id="r2_c0" class="button"></button>
+                <button id="r2_c1" class="button"></button>
+                <button id="r2_c2" class="button"></button>
 
             </div>
+            <button id="rematch_button" onclick="newGame()">Nouvelle partie</button>
         </div>
+
     </div>
 
     <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
 </body>
 </html>
