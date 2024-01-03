@@ -18,7 +18,7 @@ h1 {
 }
 
 
-#game-board {
+#game_board {
     display: flex;
     flex-direction: column;
     align-items: center;

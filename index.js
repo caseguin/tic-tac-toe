@@ -1,18 +1,24 @@
+// Déclarer les variables
+let turn = -1;
+const player1_symbol = 'X';
+const player2_symbol = 'O';
+const narrator_element = document.getElementById('narrator');
+
 // Condition pour gagner
 function winCondition() {
     const symbols = ['X', 'O'];
     const win_conditions = [
-                // Rows
-                ['r0_c0', 'r0_c1', 'r0_c2'],
-                ['r1_c0', 'r1_c1', 'r1_c2'],
-                ['r2_c0', 'r2_c1', 'r2_c2'],
-                // Columns
-                ['r0_c0', 'r1_c0', 'r2_c0'],
-                ['r0_c1', 'r1_c1', 'r2_c1'],
-                ['r0_c2', 'r1_c2', 'r2_c2'],
-                // Diagonals
-                ['r0_c0', 'r1_c1', 'r2_c2'],
-                ['r0_c2', 'r1_c1', 'r2_c0']
+        // Rows
+        ['r0_c0', 'r0_c1', 'r0_c2'],
+        ['r1_c0', 'r1_c1', 'r1_c2'],
+        ['r2_c0', 'r2_c1', 'r2_c2'],
+        // Columns
+        ['r0_c0', 'r1_c0', 'r2_c0'],
+        ['r0_c1', 'r1_c1', 'r2_c1'],
+        ['r0_c2', 'r1_c2', 'r2_c2'],
+        // Diagonals
+        ['r0_c0', 'r1_c1', 'r2_c2'],
+        ['r0_c2', 'r1_c1', 'r2_c0']
     ]
 
     for (const symbol of symbols) {
@@ -32,12 +38,11 @@ function winCondition() {
 }
 
 
-
 // Condition de null
 function nullCondition() {
-    const gridElements = document.querySelectorAll('.button');
+    const grid_elements = document.querySelectorAll('.button');
 
-    for (const element of gridElements) {
+    for (const element of grid_elements) {
         if (element.textContent === '') {
             return false;
         }
@@ -47,12 +52,11 @@ function nullCondition() {
 }
 
 
-
 // Bouton rematch
 function newGame(){
     // Enlever le texte de la grille
-    const gridElements = document.querySelectorAll('.button');
-    for (element of gridElements) {
+    const grid_elements = document.querySelectorAll('.button');
+    for (element of grid_elements) {
         element.textContent = '';
         element.style.backgroundColor = ''; 
     }
@@ -63,14 +67,6 @@ function newGame(){
     }
 }
 
-
-
-
-// Déroulement d'un match
-let turn = -1;
-const player1_symbol = 'X';
-const player2_symbol = 'O';
-const narrator_element = document.getElementById('narrator');
 
 // fonction de déroulement du match
 function alternateTurns(event) {
@@ -113,7 +109,7 @@ function alternateTurns(event) {
 
 // Gestion des events
 const buttons = document.querySelectorAll('.button');
-buttons.forEach(button => {
+for(const button of buttons) {
     button.addEventListener('click', function(event) {
         alternateTurns(event);
 
@@ -131,6 +127,7 @@ buttons.forEach(button => {
                 wining_button.style.backgroundColor = 'red';
             }
 
+            // Fonction externe pour le confettis
             confetti({
                 particleCount: 1500,
                 spread: 500,
@@ -149,4 +146,4 @@ buttons.forEach(button => {
 
         } else {}
     });
-});
+};
